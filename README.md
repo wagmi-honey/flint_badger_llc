@@ -9,6 +9,7 @@ Five-page website for Flint Badger LLC, built to pass 10DLC (A2P SMS) campaign r
 | Contact (SMS opt-in form) | `/contact` |
 | Privacy Policy | `/privacy-policy` |
 | SMS Terms | `/sms-terms` |
+| Terms of Service | `/terms` |
 
 The server is Node.js and Express. Pages are plain HTML and CSS rendered on the server, with no build step. The contact form works without JavaScript; with JavaScript it submits without reloading the page.
 

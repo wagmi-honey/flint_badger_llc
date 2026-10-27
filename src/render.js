@@ -43,6 +43,12 @@ export const pages = [
     title: 'SMS Terms and Conditions',
     description: 'Terms for the Flint Badger LLC text messaging program: opt-in, frequency, costs, STOP and HELP.',
   },
+  {
+    path: '/terms',
+    view: 'terms',
+    title: 'Terms of Service',
+    description: 'Terms for using the Flint Badger LLC website and for our logo, branding, and website design services.',
+  },
 ];
 
 export const extraPages = {

@@ -36,13 +36,14 @@ const readRecords = async () =>
   (await readFile(path.join(dataDir, 'submissions.jsonl'), 'utf8')).trim().split('\n').map((l) => JSON.parse(l));
 
 describe('pages', () => {
-  for (const p of ['/', '/services', '/contact', '/privacy-policy', '/sms-terms']) {
+  for (const p of ['/', '/services', '/contact', '/privacy-policy', '/sms-terms', '/terms']) {
     test(`${p} renders with footer policy links and business details`, async () => {
       const res = await fetch(base + p);
       assert.equal(res.status, 200);
       const html = await res.text();
       assert.match(html, /href="\/privacy-policy"/);
       assert.match(html, /href="\/sms-terms"/);
+      assert.match(html, /href="\/terms"/);
       assert.match(html, /116 Burch Oak Ln, Prestonsburg, KY 41653/);
       assert.match(html, /\(606\) 262-1308/);
       assert.match(html, /contact@flintbadger\.site/);
