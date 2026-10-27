@@ -43,8 +43,7 @@ function csvCell(value) {
 
 const digest = (s) => createHash('sha256').update(s).digest();
 
-export function createApp(config) {
-  const app = express();
+export function createApp(config, app = express()) {
   const render = createRenderer(config);
   const store = config.databaseUrl ? createPostgresStore(config.databaseUrl) : createStore(config.dataDir);
   if (config.serverless && !config.databaseUrl) {

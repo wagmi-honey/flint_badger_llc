@@ -1,8 +1,9 @@
+import express from 'express';
 import { createApp } from './src/create-app.js';
 import { loadConfig } from './src/config.js';
 
 const config = loadConfig();
-const app = createApp(config);
+const app = createApp(config, express());
 
 // Vercel imports this file and runs the exported app as a function; everywhere else we listen on a port.
 export default app;
