@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{page.fullTitle}}</title>
+  <meta name="description" content="{{page.description}}">
+  {{{page.robots}}}
+  <link rel="canonical" href="{{page.canonical}}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{site.legalName}}">
+  <meta property="og:title" content="{{page.fullTitle}}">
+  <meta property="og:description" content="{{page.description}}">
+  <meta property="og:url" content="{{page.canonical}}">
+  <meta name="theme-color" content="#1c1f24">
+  <link rel="icon" href="{{assets.favicon}}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{assets.styles}}">
+  <script src="{{assets.main}}" defer></script>
+  <script type="application/ld+json">{{{structuredData}}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="{{site.brandName}} home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 10 25 27 9 30 3 14Z" fill="#e8772e"/><path d="M16 2 18 16 3 14Z" fill="#f4a35f"/><path d="M18 16 29 10 25 27Z" fill="#b9541a"/><path d="M18 16 25 27 9 30Z" fill="#8f3f12"/></svg>
+        <span>{{site.brandName}}</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav">{{{nav}}}</ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+{{{content}}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">{{site.legalName}}</p>
+        <p>Logo design, branding, and custom website design for businesses.</p>
+      </div>
+      <address>
+        {{site.address}}<br>
+        <a href="tel:{{site.phoneE164}}">{{site.phone}}</a><br>
+        <a href="mailto:{{site.email}}">{{site.email}}</a>
+      </address>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/sms-terms">SMS Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container footer-legal">
+      <p>&copy; {{year}} {{site.legalName}} · {{site.address}} · <a href="tel:{{site.phoneE164}}">{{site.phone}}</a> · <a href="mailto:{{site.email}}">{{site.email}}</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/sms-terms">SMS Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>

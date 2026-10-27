@@ -1,0 +1,79 @@
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow reveal">Contact</p>
+    <h1 class="reveal" style="--d:1">Let's talk about your project</h1>
+    <p class="lead reveal" style="--d:2">Tell us about your business and what you need. We reply within one business day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <form class="contact-form reveal" method="post" action="/contact" novalidate data-contact-form>
+      {{{form.errorSummary}}}
+      <div class="form-alert" role="alert" tabindex="-1" data-form-alert hidden></div>
+
+      <div class="field">
+        <label for="name">Full name <span class="req">(required)</span></label>
+        <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required value="{{form.values.name}}" aria-describedby="name-error"{{{form.invalid.name}}}>
+        <p class="field-error" id="name-error" data-error-for="name">{{form.errors.name}}</p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="req">(required)</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required value="{{form.values.email}}" aria-describedby="email-error"{{{form.invalid.email}}}>
+        <p class="field-error" id="email-error" data-error-for="email">{{form.errors.email}}</p>
+      </div>
+
+      <div class="field">
+        <label for="phone">Mobile phone number <span class="opt">(optional)</span></label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" value="{{form.values.phone}}" aria-describedby="phone-error"{{{form.invalid.phone}}}>
+        <p class="field-error" id="phone-error" data-error-for="phone">{{form.errors.phone}}</p>
+      </div>
+
+      <div class="field">
+        <label for="service">Service needed <span class="opt">(optional)</span></label>
+        <select id="service" name="service" aria-describedby="service-error"{{{form.invalid.service}}}>{{{form.serviceOptions}}}</select>
+        <p class="field-error" id="service-error" data-error-for="service">{{form.errors.service}}</p>
+      </div>
+
+      <div class="field">
+        <label for="details">Project details <span class="req">(required)</span></label>
+        <textarea id="details" name="details" rows="6" maxlength="5000" required aria-describedby="details-error"{{{form.invalid.details}}}>{{form.values.details}}</textarea>
+        <p class="field-error" id="details-error" data-error-for="details">{{form.errors.details}}</p>
+      </div>
+
+      <div class="field consent">
+        <input id="sms_consent" name="sms_consent" type="checkbox" value="yes"{{{form.smsChecked}}}>
+        <label for="sms_consent">{{{form.consentLabel}}}</label>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label for="company_fax">Leave this field empty</label>
+        <input id="company_fax" name="company_fax" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button class="button" type="submit">Send message</button>
+    </form>
+
+    <div class="contact-side">
+      <aside class="contact-details reveal" aria-label="Contact details">
+        <h2>Contact details</h2>
+        <p><strong>{{site.legalName}}</strong></p>
+        <p>{{site.address}}</p>
+        <p><a href="tel:{{site.phoneE164}}">{{site.phone}}</a></p>
+        <p><a href="mailto:{{site.email}}">{{site.email}}</a></p>
+        <p class="hours">Monday to Friday, 9:00 AM to 5:00 PM Eastern</p>
+      </aside>
+
+      <aside class="next-steps reveal" style="--d:1" aria-labelledby="next-title">
+        <h2 id="next-title">What happens next</h2>
+        <ol>
+          <li><strong>We reply within one business day</strong> with a few follow-up questions or a time for a short call.</li>
+          <li><strong>You get a written quote</strong> with scope, timeline, and price, usually within two business days of the call.</li>
+          <li><strong>Design starts</strong> as soon as you approve the quote.</li>
+        </ol>
+        <p class="note">Texting is optional. Tick the box on the form if you'd like quick updates by text; otherwise we'll keep everything on email.</p>
+      </aside>
+    </div>
+  </div>
+</section>

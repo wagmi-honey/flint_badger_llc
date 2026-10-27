@@ -1,0 +1,6 @@
+data
+test
+Dockerfile
+.dockerignore
+.env
+*.log
