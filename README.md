@@ -98,7 +98,7 @@ Your name, address, phone, email and effective date all come from [src/site.js](
 
 ```
 server.js            entry point
-src/app.js           routes, contact handling, admin export
+src/create-app.js           routes, contact handling, admin export
 src/site.js          business details and SMS consent wording
 src/render.js        page list and HTML templating
 src/contact.js       form validation
