@@ -56,6 +56,13 @@ describe('pages', () => {
     assert.match(html, /No mobile information will be shared with third parties or affiliates for marketing or promotional purposes\./);
   });
 
+  test('terms of service describes the SMS program in the wording carriers scan for', async () => {
+    const html = await (await fetch(`${base}/terms`)).text();
+    assert.match(html, /agree to receive informational text messages[^.]*from Flint Badger LLC/);
+    assert.match(html, /Message frequency varies\. Message and data rates may apply\. For help, reply HELP or email us at/);
+    assert.match(html, /You can opt out at any time by replying STOP\./);
+  });
+
   test('contact form has an optional, unchecked SMS checkbox with full disclosure', async () => {
     const html = await (await fetch(`${base}/contact`)).text();
     const checkbox = html.match(/<input id="sms_consent"[^>]*>/)[0];
