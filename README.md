@@ -44,7 +44,7 @@ The repo is ready for Vercel: `vercel.json` and `server.js` are set up, no build
 
    Without this step the site still works, but the function's filesystem is temporary, so submissions and SMS consent records are lost. The logs show a warning when this is the case.
 3. **Settings > Environment Variables:** add `ADMIN_PASSWORD` (turns on the CSV export) and, optionally, the SMTP variables so inquiries are emailed to you. Redeploy after adding them.
-4. **Settings > Domains:** add `flintbadger.site` and `www.flintbadger.site`, then create the DNS records Vercel shows you at your registrar. HTTPS is automatic.
+4. **Settings > Domains:** add `flintbadgerdesign.com` and `www.flintbadgerdesign.com`, then create the DNS records Vercel shows you at your registrar. HTTPS is automatic.
 
 Everything else below is for hosts with a persistent disk, where the file store is used instead of Postgres.
 
@@ -60,7 +60,7 @@ Set the environment variables from `.env.example` on your host. The two that mat
 1. New **Web Service** from this GitHub repo. Runtime Node, build `npm ci --omit=dev`, start `npm start`.
 2. Add a **Disk** mounted at `/var/data` and set `DATA_DIR=/var/data`. Disks need a paid instance.
 3. Set `ADMIN_PASSWORD` and, optionally, the SMTP variables.
-4. Under **Custom Domains**, add `flintbadger.site` and `www.flintbadger.site`, then create the DNS records Render shows you.
+4. Under **Custom Domains**, add `flintbadgerdesign.com` and `www.flintbadgerdesign.com`, then create the DNS records Render shows you.
 
 ### Railway
 
@@ -76,11 +76,11 @@ docker run -d --name flintbadger --restart unless-stopped \
   flintbadger
 ```
 
-Put Nginx or Caddy in front for HTTPS. Caddy needs only `flintbadger.site { reverse_proxy localhost:3000 }`.
+Put Nginx or Caddy in front for HTTPS. Caddy needs only `flintbadgerdesign.com { reverse_proxy localhost:3000 }`.
 
 ### Email notifications
 
-Use the SMTP settings from your email provider, for example Google Workspace, Microsoft 365 or Zoho Mail. Send from an address on `flintbadger.site` so messages are not flagged as spam.
+Use the SMTP settings from your email provider, for example Google Workspace, Microsoft 365 or Zoho Mail. Send from an address on `flintbadgerdesign.com` so messages are not flagged as spam.
 
 ## Changing business details
 
@@ -90,7 +90,7 @@ Your name, address, phone, email and effective date all come from [src/site.js](
 
 ## Before submitting the Zoom campaign
 
-- [ ] The site is live at `https://flintbadger.site` with HTTPS.
+- [ ] The site is live at `https://flintbadgerdesign.com` with HTTPS.
 - [ ] Submit a test inquiry with the SMS box checked, and confirm it shows up in `/admin/submissions.csv`.
 - [ ] Do not add other forms that collect phone numbers without the same SMS checkbox and wording.
 - [ ] Do not mention SEO, lead generation or promotional texting anywhere on the site.

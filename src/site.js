@@ -2,11 +2,11 @@
 export const site = {
   legalName: 'Flint Badger LLC',
   brandName: 'Flint Badger',
-  domain: 'flintbadger.site',
+  domain: 'flintbadgerdesign.com',
   address: '116 Burch Oak Ln, Prestonsburg, KY 41653',
   phone: '(606) 262-1308',
   phoneE164: '+16062621308',
-  email: 'contact@flintbadger.site',
+  email: 'contact@flintbadgerdesign.com',
   effectiveDate: 'May 16, 2026',
 };
 

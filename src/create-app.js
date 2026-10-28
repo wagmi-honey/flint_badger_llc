@@ -163,7 +163,7 @@ export function createApp(config, app = express()) {
     if (err.type === 'entity.too.large') return res.status(413).type('text').send('Message too large.');
     console.error(err);
     if (res.headersSent) return next(err);
-    res.status(500).type('text').send('Something went wrong. Please email contact@flintbadger.site.');
+    res.status(500).type('text').send('Something went wrong. Please email contact@flintbadgerdesign.com.');
   });
 
   return app;

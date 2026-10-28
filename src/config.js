@@ -9,7 +9,7 @@ export function loadConfig(env = process.env) {
   return {
     port: int(env.PORT, 3000),
     serverless,
-    siteUrl: (env.SITE_URL || 'https://flintbadger.site').replace(/\/+$/, ''),
+    siteUrl: (env.SITE_URL || 'https://flintbadgerdesign.com').replace(/\/+$/, ''),
     // Postgres connection string. Vercel's Neon integration injects POSTGRES_URL; other hosts use DATABASE_URL.
     databaseUrl: env.POSTGRES_URL || env.DATABASE_URL || '',
     // File store location when no database is set. Serverless filesystems are read-only except the temp dir.
@@ -26,7 +26,7 @@ export function loadConfig(env = process.env) {
           auth: env.SMTP_USER ? { user: env.SMTP_USER, pass: env.SMTP_PASS } : undefined,
         }
       : null,
-    mailFrom: env.MAIL_FROM || 'Flint Badger Website <contact@flintbadger.site>',
-    notifyEmail: env.NOTIFY_EMAIL || 'contact@flintbadger.site',
+    mailFrom: env.MAIL_FROM || 'Flint Badger Website <contact@flintbadgerdesign.com>',
+    notifyEmail: env.NOTIFY_EMAIL || 'contact@flintbadgerdesign.com',
   };
 }

@@ -13,7 +13,7 @@ let dataDir;
 
 before(async () => {
   dataDir = await mkdtemp(path.join(tmpdir(), 'flintbadger-'));
-  const config = loadConfig({ DATA_DIR: dataDir, ADMIN_PASSWORD: 'secret', SITE_URL: 'https://flintbadger.site' });
+  const config = loadConfig({ DATA_DIR: dataDir, ADMIN_PASSWORD: 'secret', SITE_URL: 'https://flintbadgerdesign.com' });
   server = createApp(config).listen(0);
   await new Promise((resolve) => server.once('listening', resolve));
   base = `http://127.0.0.1:${server.address().port}`;
@@ -46,7 +46,7 @@ describe('pages', () => {
       assert.match(html, /href="\/terms"/);
       assert.match(html, /116 Burch Oak Ln, Prestonsburg, KY 41653/);
       assert.match(html, /\(606\) 262-1308/);
-      assert.match(html, /contact@flintbadger\.site/);
+      assert.match(html, /contact@flintbadgerdesign.com/);
       assert.doesNotMatch(html, /\[(DOMAIN|ADDRESS|PHONE|EMAIL|EFFECTIVE DATE)\]|\{\{/);
     });
   }
