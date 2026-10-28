@@ -58,7 +58,7 @@ describe('pages', () => {
 
   test('terms of service describes the SMS program in the wording carriers scan for', async () => {
     const html = await (await fetch(`${base}/terms`)).text();
-    assert.match(html, /agree to receive informational text messages[^.]*from Flint Badger LLC/);
+    assert.match(html, /You agree to receive information messages[^.]*from Flint Badger LLC\./);
     assert.match(html, /Message frequency varies\. Message and data rates may apply\. For help, reply HELP or email us at/);
     assert.match(html, /You can opt out at any time by replying STOP\./);
   });
