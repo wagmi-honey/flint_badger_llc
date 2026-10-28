@@ -46,7 +46,7 @@ describe('pages', () => {
       assert.match(html, /href="\/terms"/);
       assert.match(html, /116 Burch Oak Ln, Prestonsburg, KY 41653/);
       assert.match(html, /\(606\) 262-1308/);
-      assert.match(html, /contact@flintbadgerdesign.com/);
+      assert.match(html, /contact@flintbadgerdesign\.com/);
       assert.doesNotMatch(html, /\[(DOMAIN|ADDRESS|PHONE|EMAIL|EFFECTIVE DATE)\]|\{\{/);
     });
   }
